@@ -8,9 +8,8 @@ const path = require("path");
 
 if(process.env.NODE_ENV === 'production'){
   //set static folder
-  app.use(express.static('client/public'));
+  app.use(express.static(path.join(__dirname, 'client/build')));
 }
-
 
 // Bodyparser middleware
 app.use(
@@ -36,8 +35,8 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 
-app.get('/',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
