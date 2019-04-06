@@ -13,7 +13,6 @@ Link to Heroku: https://fast-oasis-66568.herokuapp.com/
 * React – Frontend
 * Redux – React Component State Management
 * Passport & JWT – User Authentication & Authorization
-* Mongodb - User database
 
 ## Future improvements
 
